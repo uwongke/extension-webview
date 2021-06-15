@@ -63,6 +63,7 @@ class WebView  {
 			}
 			_open(Json.stringify(obj));
 		#elseif ios
+			trace("whitelist: " + urlWhitelist);
 			if (listener == null) listener = new WebViewListener(urlWhitelist, urlBlacklist);
 			APICall("init", [listener, floating]);
 			navigate(url);
